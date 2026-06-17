@@ -51,7 +51,7 @@ export function FormContact() {
                       type="text"
                       id={field.name}
                       name={field.name}
-                      className={`pixel-box w-full rounded border px-3 py-4 ${isInvalid ? "mb-3" : ""}`}
+                      className={`pixel-box w-full border px-3 py-4 ${isInvalid ? "mb-3" : ""}`}
                       placeholder="Your Name"
                       value={field.state.value}
                       onChange={(e) => field.setValue(e.target.value)}
@@ -80,7 +80,7 @@ export function FormContact() {
                       type="email"
                       id={field.name}
                       name={field.name}
-                      className={`pixel-box w-full rounded border px-3 py-4 ${isInvalid ? "mb-3" : ""}`}
+                      className={`pixel-box w-full border px-3 py-4 ${isInvalid ? "mb-3" : ""}`}
                       placeholder="Your Email"
                       value={field.state.value}
                       onChange={(e) => field.setValue(e.target.value)}
@@ -109,7 +109,7 @@ export function FormContact() {
                       type="tel"
                       id={field.name}
                       name={field.name}
-                      className={`pixel-box w-full rounded border px-3 py-4 ${isInvalid ? "mb-3" : ""}`}
+                      className={`pixel-box w-full border px-3 py-4 ${isInvalid ? "mb-3" : ""}`}
                       placeholder="Your Phone Number"
                       value={field.state.value}
                       onChange={(e) => field.setValue(e.target.value)}
@@ -138,7 +138,7 @@ export function FormContact() {
                       rows={7}
                       id={field.name}
                       name={field.name}
-                      className={`pixel-box w-full rounded border px-3 py-4 ${isInvalid ? "mb-3" : ""}`}
+                      className={`pixel-box w-full border px-3 py-4 ${isInvalid ? "mb-3" : ""}`}
                       placeholder="Your Message"
                       value={field.state.value}
                       onChange={(e) => field.setValue(e.target.value)}
@@ -159,7 +159,7 @@ export function FormContact() {
         <Button
           type="submit"
           form="form-contact"
-          className="pixel-box w-full rounded bg-fuchsia-600 text-white"
+          className="pixel-box w-full bg-fuchsia-600 text-white"
         >
           Send Message
         </Button>

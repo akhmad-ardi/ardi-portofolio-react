@@ -1,12 +1,13 @@
 import {
-  LinkedInLogoIcon,
-  GitHubLogoIcon,
-  InstagramLogoIcon,
-  Link1Icon as LinkIcon,
-} from "@radix-ui/react-icons"
+  FaLinkedin,
+  FaGithub,
+  FaInstagram,
+  FaLink,
+  FaDesktop,
+} from "react-icons/fa"
 import { Typewriter } from "react-simple-typewriter"
 import { Navbar } from "@/components/navbar"
-import { Card, CardContent } from "@/components/ui/card"
+import { Card, CardContent, CardFooter } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { FormContact } from "@/components/form-contact"
 import { DATA } from "@/lib/utils"
@@ -56,7 +57,7 @@ export default function App() {
                   asChild
                 >
                   <a href="#">
-                    <LinkedInLogoIcon />
+                    <FaLinkedin />
                   </a>
                 </Button>
 
@@ -65,7 +66,7 @@ export default function App() {
                   asChild
                 >
                   <a href="">
-                    <GitHubLogoIcon />
+                    <FaGithub />
                   </a>
                 </Button>
 
@@ -74,7 +75,7 @@ export default function App() {
                   asChild
                 >
                   <a href="">
-                    <InstagramLogoIcon />
+                    <FaInstagram />
                   </a>
                 </Button>
               </div>
@@ -135,7 +136,7 @@ export default function App() {
                       asChild
                     >
                       <a href="#">
-                        <LinkedInLogoIcon />
+                        <FaLinkedin />
                       </a>
                     </Button>
 
@@ -144,7 +145,7 @@ export default function App() {
                       asChild
                     >
                       <a href="">
-                        <GitHubLogoIcon />
+                        <FaGithub />
                       </a>
                     </Button>
 
@@ -153,7 +154,7 @@ export default function App() {
                       asChild
                     >
                       <a href="">
-                        <InstagramLogoIcon />
+                        <FaInstagram />
                       </a>
                     </Button>
                   </div>
@@ -177,26 +178,53 @@ export default function App() {
             {DATA.projects.map((project, index) => (
               <Card
                 key={index}
-                className="pixel-box mx-auto w-11/12 bg-white text-black dark:bg-black dark:text-white"
+                className="pixel-box mx-auto flex h-full w-11/12 flex-col bg-white text-black dark:bg-black dark:text-white"
               >
-                <CardContent>
-                  <img
-                    src={project.img}
-                    alt={project.title}
-                    className="pixel-box mb-3 h-auto w-full rounded-lg"
-                  />
-                  <h3 className="text-xl font-bold">{project.title}</h3>
-                  <p className="mt-2">{project.description}</p>
+                <CardContent className="flex flex-1 flex-col">
+                  <div className="mb-3">
+                    {project.img ? (
+                      <img
+                        src={project.img}
+                        alt={project.title}
+                        className="pixel-box mb-3 h-auto w-full"
+                      />
+                    ) : (
+                      <div className="pixel-box mb-3 flex h-32 w-full items-center justify-center">
+                        <FaDesktop size={70} />
+                      </div>
+                    )}
 
-                  <div className="mt-4 flex gap-3">
-                    <Button className="pixel-box w-fit bg-fuchsia-600 py-5 text-white">
-                      <GitHubLogoIcon className="size-6" />
-                    </Button>
-
-                    <Button className="pixel-box w-fit bg-fuchsia-600 py-5 text-white">
-                      <LinkIcon className="size-6" />
-                    </Button>
+                    <h3 className="text-xl font-bold">{project.title}</h3>
+                    <p className="mt-2">{project.description}</p>
                   </div>
+
+                  <CardFooter className="pixel-box mt-auto mb-5 p-2">
+                    <div className="flex gap-3">
+                      {project.links.repositories &&
+                        project.links.repositories.map((repository, index) => (
+                          <Button
+                            key={index}
+                            className="pixel-box w-fit bg-fuchsia-600 py-5 text-white"
+                            asChild
+                          >
+                            <a href={repository} target="_blank">
+                              <FaGithub className="size-6" />
+                            </a>
+                          </Button>
+                        ))}
+
+                      {project.links.demo && (
+                        <Button
+                          className="pixel-box w-fit bg-fuchsia-600 py-5 text-white"
+                          asChild
+                        >
+                          <a href={project.links.demo} target="_blank">
+                            <FaLink className="size-6" />
+                          </a>
+                        </Button>
+                      )}
+                    </div>
+                  </CardFooter>
                 </CardContent>
               </Card>
             ))}
@@ -250,7 +278,7 @@ export default function App() {
                   asChild
                 >
                   <a href="#">
-                    <LinkedInLogoIcon />
+                    <FaLinkedin />
                   </a>
                 </Button>
 
@@ -259,7 +287,7 @@ export default function App() {
                   asChild
                 >
                   <a href="#">
-                    <GitHubLogoIcon />
+                    <FaGithub />
                   </a>
                 </Button>
 
@@ -268,7 +296,7 @@ export default function App() {
                   asChild
                 >
                   <a href="#">
-                    <InstagramLogoIcon />
+                    <FaInstagram />
                   </a>
                 </Button>
               </div>

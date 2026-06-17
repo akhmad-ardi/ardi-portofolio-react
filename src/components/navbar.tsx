@@ -13,7 +13,7 @@ export function Navbar() {
   const { theme, setTheme } = useTheme()
 
   return (
-    <header className="fixed top-0 left-0 z-50 w-full py-5 md:py-10">
+    <header className="fixed top-0 left-0 z-50 my-5 w-full md:my-10">
       <div className="hidden justify-center md:flex">
         <nav className="pixel-box bg-fuchsia-600 px-8 py-3 text-white">
           <ul className="flex gap-8 text-xl">
