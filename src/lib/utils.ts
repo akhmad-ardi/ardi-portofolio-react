@@ -13,15 +13,15 @@ export const DATA = {
   social_media: [
     {
       icon: FaLinkedinIn,
-      link: "#",
+      link: "https://www.linkedin.com/in/akhmad-ardiansyah-a85904261/",
     },
     {
       icon: FaGithub,
-      link: "#",
+      link: "https://github.com/akhmad-ardi",
     },
     {
       icon: FaInstagram,
-      link: "#",
+      link: "https://www.instagram.com/ardi.17__/",
     },
   ],
 

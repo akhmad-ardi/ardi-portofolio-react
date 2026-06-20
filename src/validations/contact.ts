@@ -1,8 +1,10 @@
 import { z } from "zod"
 
 export const contactSchema = z.object({
-  name: z.string().min(1, "Name is required"),
-  email: z.email("Invalid email address").min(1, "Email is required"),
-  phone: z.string().min(1, "Phone number is required"),
-  message: z.string().min(1, "Message is required"),
+  name: z.string().nonempty({ error: "Name is required" }),
+  email: z
+    .email({ error: "Invalid email address" })
+    .nonempty({ error: "Email is required" }),
+  phone_number: z.string().nonempty({ error: "Phone number is required" }),
+  message: z.string().nonempty({ error: "Message is required" }),
 })

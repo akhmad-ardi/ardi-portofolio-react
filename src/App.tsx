@@ -1,15 +1,10 @@
-import {
-  FaLinkedin,
-  FaGithub,
-  FaInstagram,
-  FaLink,
-  FaDesktop,
-} from "react-icons/fa"
+import { FaGithub, FaLink, FaDesktop } from "react-icons/fa"
 import { Typewriter } from "react-simple-typewriter"
 import { Navbar } from "@/components/navbar"
 import { Card, CardContent, CardFooter } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { FormContact } from "@/components/form-contact"
+import { SocialMedia } from "@/components/social-media"
 import { DATA } from "@/lib/utils"
 
 export default function App() {
@@ -52,39 +47,14 @@ export default function App() {
               </div>
 
               <div className="flex justify-center gap-3 md:justify-start">
-                <Button
-                  className="pixel-box h-full bg-fuchsia-600 text-white"
-                  asChild
-                >
-                  <a href="#">
-                    <FaLinkedin />
-                  </a>
-                </Button>
-
-                <Button
-                  className="pixel-box h-full bg-fuchsia-600 text-white"
-                  asChild
-                >
-                  <a href="">
-                    <FaGithub />
-                  </a>
-                </Button>
-
-                <Button
-                  className="pixel-box h-full bg-fuchsia-600 text-white"
-                  asChild
-                >
-                  <a href="">
-                    <FaInstagram />
-                  </a>
-                </Button>
+                <SocialMedia />
               </div>
             </div>
           </div>
 
           <div>
             <img
-              src="/dummy-img.jpg"
+              src="/Photo-Profile.webp"
               alt="Profile"
               className="pixel-box w-48 rounded-xl md:w-72"
             />
@@ -104,7 +74,7 @@ export default function App() {
           <Card className="pixel-box mx-auto w-full bg-white text-black md:w-2/3 dark:bg-black dark:text-white">
             <CardContent className="flex flex-col items-start gap-6 md:flex-row md:items-center">
               <img
-                src="/dummy-img.jpg"
+                src="/Photo-Profile.webp"
                 alt="About"
                 className="pixel-box w-48 rounded-xl"
               />
@@ -131,32 +101,7 @@ export default function App() {
                   </div>
 
                   <div className="flex justify-center gap-3 md:justify-start">
-                    <Button
-                      className="pixel-box h-full bg-fuchsia-600 text-white"
-                      asChild
-                    >
-                      <a href="#">
-                        <FaLinkedin />
-                      </a>
-                    </Button>
-
-                    <Button
-                      className="pixel-box h-full bg-fuchsia-600 text-white"
-                      asChild
-                    >
-                      <a href="">
-                        <FaGithub />
-                      </a>
-                    </Button>
-
-                    <Button
-                      className="pixel-box h-full bg-fuchsia-600 text-white"
-                      asChild
-                    >
-                      <a href="">
-                        <FaInstagram />
-                      </a>
-                    </Button>
+                    <SocialMedia />
                   </div>
                 </div>
               </div>
@@ -273,32 +218,7 @@ export default function App() {
             <CardContent>
               <FormContact />
               <div className="flex justify-center gap-3">
-                <Button
-                  className="pixel-box h-full bg-fuchsia-600 p-3 text-white"
-                  asChild
-                >
-                  <a href="#">
-                    <FaLinkedin />
-                  </a>
-                </Button>
-
-                <Button
-                  className="pixel-box h-full bg-fuchsia-600 p-3 text-white"
-                  asChild
-                >
-                  <a href="#">
-                    <FaGithub />
-                  </a>
-                </Button>
-
-                <Button
-                  className="pixel-box h-full bg-fuchsia-600 p-3 text-white"
-                  asChild
-                >
-                  <a href="#">
-                    <FaInstagram />
-                  </a>
-                </Button>
+                <SocialMedia />
               </div>
             </CardContent>
           </Card>

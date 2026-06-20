@@ -1,4 +1,6 @@
 import { useForm } from "@tanstack/react-form"
+import { toast } from "sonner"
+import axios from "axios"
 import {
   Field,
   FieldContent,
@@ -16,14 +18,41 @@ export function FormContact() {
     defaultValues: {
       name: "",
       email: "",
-      phone: "",
+      phone_number: "",
       message: "",
     },
     validators: {
       onSubmit: contactSchema,
     },
-    onSubmit: async ({ value }) => {
-      console.log("Form submitted with values:", value)
+    onSubmit: ({ value }) => {
+      const request = axios.post(
+        "https://ardi-portofolio-backend.akhmad-ardiansyah1711.workers.dev/message",
+        {
+          ...value,
+        }
+      )
+      toast.promise(request, {
+        loading: "Send Message...",
+        success: (response) => {
+          formContact.reset()
+          return response.data.message
+        },
+        error: (err) => {
+          console.error(err)
+
+          if (axios.isAxiosError(err)) {
+            const errors = err.response?.data?.errors
+
+            return Object.values(errors).join(", ")
+          }
+
+          return "Request Failed"
+        },
+        position: "top-center",
+        style: {
+          textTransform: "capitalize",
+        },
+      })
     },
   })
 
@@ -96,7 +125,7 @@ export function FormContact() {
           />
 
           <formContact.Field
-            name="phone"
+            name="phone_number"
             children={(field) => {
               const isInvalid =
                 field.state.meta.isTouched && !field.state.meta.isValid

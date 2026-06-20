@@ -1,0 +1,7 @@
+{
+  "completions": {
+    "lsp": true,
+  },
+  "linked_edits": true,
+  "enable_language_server": false,
+}
